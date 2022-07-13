@@ -1,5 +1,4 @@
 import AppError from '@shared/errors/AppError';
-import { log } from 'console';
 import { getCustomRepository } from 'typeorm';
 import UserRepository from '../typeorm/repositories/UserRepository';
 import UserTokensRepository from '../typeorm/repositories/UserTokensRepository';
