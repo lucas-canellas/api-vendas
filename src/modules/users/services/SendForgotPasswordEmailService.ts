@@ -1,3 +1,4 @@
+import EtherealMail from '@config/mail/EtherealMail';
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import UserRepository from '../typeorm/repositories/UserRepository';
@@ -20,6 +21,11 @@ class SendForgotPasswordEmailService {
 
     // eslint-disable-next-line no-console
     console.log(token);
+
+    await EtherealMail.sendMail({
+      to: email,
+      body: `Solicitação de redefiunição de senha recebida. ${token?.token} `,
+    });
   }
 }
 
